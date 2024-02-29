@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.landmarkremark.view.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_noteInputFragment"
+            app:destination="@id/notesMapFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notesMapFragment"
+        android:name="com.example.landmarkremark.view.noteMap.NotesMapFragment"
+        android:label="Notes Map Fragment"
+        tools:layout="@layout/fragment_add_note">
+
+        <action
+            android:id="@+id/action_notesMapFragment_to_searchResultFragment"
+            app:destination="@id/searchResultFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/searchResultFragment"
+        android:name="com.example.landmarkremark.view.search.SearchResultFragment"
+        android:label="SearchResultFragment"
+        tools:layout="@layout/fragment_search_result" />
+
+</navigation>
