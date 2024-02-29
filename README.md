@@ -35,4 +35,4 @@ Landmark Remark is an application that allows users to save notes based on locat
     - When a user enters text or a username, perform a search query against the Firebase Realtime Database.
     - Display search results on the map.
   
-  ![cautrrucapi](https://github.com/hominhduc18/landmark-remark/assets/90144686/6a1573c5-80ed-4914-93e8-0b94aef5b3f6)]
+  ![cautrrucapi](https://github.com/hominhduc18/landmark-remark/assets/90144686/6a1573c5-80ed-4914-93e8-0b94aef5b3f6)
