@@ -75,7 +75,6 @@ class MapFragment : BaseFragment() {
             showCurrentLocation()
         }
     }
-
     private fun requestLocationPermission() {
         ActivityCompat.requestPermissions(
             requireActivity(),
@@ -83,7 +82,6 @@ class MapFragment : BaseFragment() {
             PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION
         )
     }
-
     @SuppressLint("MissingPermission")
     private fun showCurrentLocation() {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
@@ -103,7 +101,6 @@ class MapFragment : BaseFragment() {
             Toast.makeText(requireContext(), "Failed to get location: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,

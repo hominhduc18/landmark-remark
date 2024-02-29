@@ -16,7 +16,6 @@ class NotesMapViewModel : ViewModel() {
 
     private val database = FirebaseDatabase.getInstance().reference.child("notes")
     private val currentUserUid = FirebaseAuth.getInstance().currentUser?.uid ?: ""
-
     init {
         if (currentUserUid.isNotEmpty()) {
             retrieveUserNotesFromFirebase()
@@ -24,7 +23,6 @@ class NotesMapViewModel : ViewModel() {
             retrieveAllNotesFromFirebase()
         }
     }
-
     private fun retrieveUserNotesFromFirebase() {
         database.orderByChild("userId").equalTo(currentUserUid).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -59,7 +57,6 @@ class NotesMapViewModel : ViewModel() {
                 }
                 _noteMarkers.value = markers
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Log.e("Firebase", "Database error occurred: ${error.message}")
 

@@ -11,13 +11,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class NotesMapFragment : BaseFragment() {
-
     private lateinit var mMap: GoogleMap
     private lateinit var viewModel: NotesMapViewModel
     private lateinit var noteSearchButton: Button
-
     override fun initIdLayoutFragment(): Int = R.layout.fragment_add_note
-
     override fun initView() {
         val mapFragment = childFragmentManager.findFragmentById(R.id.mapnoteFragment) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
@@ -29,21 +26,17 @@ class NotesMapFragment : BaseFragment() {
                 addNoteMarker(marker.location, marker.note, marker.userName)
             }
         })
-
         noteSearchButton = fragView.findViewById<Button>(R.id.noteSearchButton)
         noteSearchButton.setOnClickListener {
             clickView()
         }
     }
-
     override fun clickView() {
         findNavController().navigate(R.id.action_notesMapFragment_to_searchResultFragment)
     }
-
     override fun onCustomMapReady(googleMap: GoogleMap) {
         mMap = googleMap
     }
-
     private fun addNoteMarker(location: LatLng, note: String, userName: String = "") {
         val marker = mMap.addMarker(MarkerOptions().position(location).title(note))
         if (userName.isNotEmpty()) {
